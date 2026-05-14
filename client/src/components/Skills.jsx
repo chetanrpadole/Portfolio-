@@ -1,89 +1,75 @@
 // Skills.jsx
-import { useEffect, useRef } from "react";
 
 function Skills() {
-    const sectionRef = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.querySelectorAll(".reveal").forEach((el) => {
-                            el.classList.add("visible");
-                        });
-                    }
-                });
-            },
-            { threshold: 0.15 }
-        );
-
-        if (sectionRef.current) observer.observe(sectionRef.current);
-        return () => observer.disconnect();
-    }, []);
-
     const categories = [
         {
-            icon: "🎨",
             title: "Frontend",
             skills: [
-                { icon: "⚛️", name: "React" },
-                { icon: "📜", name: "JavaScript" },
-                { icon: "🌐", name: "HTML5" },
-                { icon: "🎨", name: "CSS3" },
-                { icon: "💨", name: "Tailwind CSS" },
+                { name: "React", level: "Comfortable" },
+                { name: "JavaScript (ES6+)", level: "Comfortable" },
+                { name: "HTML & CSS", level: "Comfortable" },
+                { name: "Tailwind CSS", level: "Comfortable" },
             ],
         },
         {
-            icon: "⚙️",
             title: "Backend",
             skills: [
-                { icon: "🟢", name: "Node.js" },
-                { icon: "🚂", name: "Express.js" },
-                { icon: "🍃", name: "MongoDB" },
-                { icon: "🔗", name: "REST APIs" },
+                { name: "Node.js", level: "Comfortable" },
+                { name: "Express.js", level: "Comfortable" },
+                { name: "REST APIs", level: "Comfortable" },
+                { name: "JWT Authentication", level: "Learning" },
             ],
         },
         {
-            icon: "🛠️",
-            title: "Tools & Others",
+            title: "Database",
             skills: [
-                { icon: "📦", name: "Git" },
-                { icon: "🐙", name: "GitHub" },
-                { icon: "⚡", name: "Vite" },
-                { icon: "🖥️", name: "VS Code" },
-                { icon: "▲", name: "Vercel" },
+                { name: "MongoDB", level: "Comfortable" },
+                { name: "Mongoose", level: "Comfortable" },
+                { name: "Aggregation Pipeline", level: "Exploring" },
+            ],
+        },
+        {
+            title: "Tools & Workflow",
+            skills: [
+                { name: "Git & GitHub", level: "Comfortable" },
+                { name: "Postman", level: "Comfortable" },
+                { name: "VS Code", level: "Comfortable" },
+                { name: "Vite", level: "Comfortable" },
             ],
         },
     ];
 
     return (
-        <section id="skills" className="skills section" ref={sectionRef}>
-            <div className="container">
-                <div className="skills-header reveal">
-                    <span className="section-label">My Skills</span>
-                    <h2 className="section-title">
-                        Technologies I{" "}
-                        <span className="gradient-text">work with</span>
+        <section id="skills" className="py-24 bg-bg-card/30 border-t border-border/50">
+            <div className="max-w-5xl mx-auto px-6">
+                
+                <div className="mb-12">
+                    <h2 className="text-3xl font-bold text-text mb-4">
+                        Technical Skills
                     </h2>
-                    <p className="section-subtitle" style={{ margin: "0 auto" }}>
-                        Here are the technologies and tools I use to bring ideas to life.
+                    <p className="text-text-secondary max-w-2xl">
+                        A breakdown of the tools and technologies I use to build applications. 
+                        I focus heavily on the MERN stack but remain adaptable to whatever the project requires.
                     </p>
                 </div>
 
-                <div className="skills-categories stagger-children">
+                <div className="grid md:grid-cols-2 gap-6">
                     {categories.map((cat, i) => (
-                        <div key={i} className="skill-category reveal">
-                            <div className="category-icon">{cat.icon}</div>
-                            <h3 className="category-title">{cat.title}</h3>
-                            <div className="skill-list">
+                        <div 
+                            key={i} 
+                            className="bg-bg-card border border-border rounded-lg p-6 hover:border-border-hover transition-colors"
+                        >
+                            <h3 className="text-lg font-semibold text-text mb-6 pb-2 border-b border-border/50">
+                                {cat.title}
+                            </h3>
+                            <div className="flex flex-col gap-3">
                                 {cat.skills.map((skill, j) => (
-                                    <div key={j} className="skill-item">
-                                        <span className="skill-icon">
-                                            {skill.icon}
-                                        </span>
-                                        <span className="skill-name">
+                                    <div key={j} className="flex justify-between items-center group">
+                                        <span className="text-text-secondary group-hover:text-text transition-colors">
                                             {skill.name}
+                                        </span>
+                                        <span className="text-xs font-mono text-text-muted px-2 py-0.5 rounded bg-bg border border-border/50">
+                                            {skill.level}
                                         </span>
                                     </div>
                                 ))}
@@ -91,6 +77,7 @@ function Skills() {
                         </div>
                     ))}
                 </div>
+
             </div>
         </section>
     );

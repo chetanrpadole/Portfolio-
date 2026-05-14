@@ -4,78 +4,78 @@ import { useState, useEffect } from "react";
 function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
-    const [activeSection, setActiveSection] = useState("");
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-
-            // Detect active section
-            const sections = ["about", "skills", "projects", "contact"];
-            for (const id of sections.reverse()) {
-                const el = document.getElementById(id);
-                if (el && window.scrollY >= el.offsetTop - 200) {
-                    setActiveSection(id);
-                    break;
-                }
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        const onScroll = () => setScrolled(window.scrollY > 40);
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    const handleNavClick = (e, id) => {
+    const scrollTo = (e, id) => {
         e.preventDefault();
         setMenuOpen(false);
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: "smooth" });
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     };
 
-    const navItems = [
-        { id: "about", label: "About" },
-        { id: "skills", label: "Skills" },
-        { id: "projects", label: "Projects" },
-        { id: "contact", label: "Contact" },
-    ];
+    const links = ["about", "skills", "projects", "contact"];
 
     return (
-        <nav className={`navbar ${scrolled ? "scrolled" : ""}`} id="navbar">
-            <div className="container">
-                <a href="#" className="navbar-logo">
-                    Chetan<span className="logo-dot">.</span>
+        <nav
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+                scrolled
+                    ? "bg-bg/80 backdrop-blur-md border-b border-border"
+                    : "bg-transparent"
+            }`}
+        >
+            <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+                <a
+                    href="#"
+                    className="text-text font-bold text-lg tracking-tight"
+                >
+                    chetan<span className="text-accent">.</span>
                 </a>
 
-                <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
-                    {navItems.map((item) => (
+                {/* Desktop links */}
+                <div className="hidden md:flex items-center gap-8">
+                    {links.map((link) => (
                         <a
-                            key={item.id}
-                            href={`#${item.id}`}
-                            className={activeSection === item.id ? "active" : ""}
-                            onClick={(e) => handleNavClick(e, item.id)}
+                            key={link}
+                            href={`#${link}`}
+                            onClick={(e) => scrollTo(e, link)}
+                            className="text-sm text-text-muted hover:text-text transition-colors capitalize"
                         >
-                            {item.label}
+                            {link}
                         </a>
                     ))}
-                    <a
-                        href="#contact"
-                        className="navbar-cta"
-                        onClick={(e) => handleNavClick(e, "contact")}
-                    >
-                        Let's Talk
-                    </a>
                 </div>
 
+                {/* Hamburger */}
                 <button
-                    className={`hamburger ${menuOpen ? "open" : ""}`}
+                    className="md:hidden flex flex-col gap-1.5 p-1"
                     onClick={() => setMenuOpen(!menuOpen)}
                     aria-label="Toggle menu"
                 >
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span className={`block w-5 h-0.5 bg-text-secondary transition-transform ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+                    <span className={`block w-5 h-0.5 bg-text-secondary transition-opacity ${menuOpen ? "opacity-0" : ""}`} />
+                    <span className={`block w-5 h-0.5 bg-text-secondary transition-transform ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
                 </button>
             </div>
+
+            {/* Mobile menu */}
+            {menuOpen && (
+                <div className="md:hidden bg-bg-card border-t border-border px-6 py-4 flex flex-col gap-4">
+                    {links.map((link) => (
+                        <a
+                            key={link}
+                            href={`#${link}`}
+                            onClick={(e) => scrollTo(e, link)}
+                            className="text-sm text-text-secondary hover:text-text transition-colors capitalize"
+                        >
+                            {link}
+                        </a>
+                    ))}
+                </div>
+            )}
         </nav>
     );
 }
