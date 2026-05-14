@@ -4,7 +4,7 @@ function About() {
     return (
         <section id="about" className="py-24 border-t border-border/50">
             <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16">
-                
+
                 {/* Text Content */}
                 <div>
                     <h2 className="text-3xl font-bold text-text mb-6">
@@ -12,19 +12,11 @@ function About() {
                     </h2>
                     <div className="space-y-4 text-text-secondary leading-relaxed">
                         <p>
-                            I'm a self-taught developer who focuses on building full-stack applications. 
-                            My journey into web development started with a curiosity about how things work 
-                            under the hood, and it quickly grew into a focus on building practical, data-driven 
-                            applications.
-                        </p>
-                        <p>
-                            Currently, I spend most of my time working with the MERN stack (MongoDB, Express, React, Node.js). 
-                            I enjoy the process of taking an idea, designing the database schema, building the API, 
-                            and connecting it all to a clean, responsive frontend.
-                        </p>
-                        <p>
-                            I prefer simple solutions over complex ones and value clean, readable code.
-                            When I'm not coding, I'm usually exploring new tech or refining my existing projects.
+                            I’m a fresher MERN stack developer
+                            passionate about building full-stack web applications
+                            using MongoDB, Express.js, React, and Node.js.
+                            I enjoy creating practical projects, learning new technologies,
+                            and improving my problem-solving and development skills.
                         </p>
                     </div>
                 </div>
@@ -55,8 +47,8 @@ function About() {
                         </h3>
                         <div className="flex flex-wrap gap-2">
                             {["TypeScript", "Next.js", "Docker"].map((tech) => (
-                                <span 
-                                    key={tech} 
+                                <span
+                                    key={tech}
                                     className="px-3 py-1 bg-bg text-text-muted text-sm rounded border border-border"
                                 >
                                     {tech}
