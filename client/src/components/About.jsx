@@ -46,7 +46,7 @@ function About() {
                             Currently Learning
                         </h3>
                         <div className="flex flex-wrap gap-2">
-                            {["TypeScript", "Next.js", "Docker"].map((tech) => (
+                            {["TypeScript", "Next.js",].map((tech) => (
                                 <span
                                     key={tech}
                                     className="px-3 py-1 bg-bg text-text-muted text-sm rounded border border-border"
