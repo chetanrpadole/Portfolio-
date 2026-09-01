@@ -3,10 +3,26 @@
 function Projects() {
   const projects = [
     {
-      title: "Employee Management System",
-      desc: "A full-stack MERN application for managing employee records, attendance tracking, and role-based access control. Features a secure REST API and a dashboard for analytics.",
+      title: "StayNest",
+      desc: "Built a full-stack vacation rental platform with user authentication, property listing CRUD operations, reviews, image uploads using Cloudinary, and REST APIs.",
       features: [
-        "Role-based Auth",
+        "User Authentication",
+        "Property/Listing CRUD",
+        "Reviews & Ratings",
+        "Image Uploads (Cloudinary)",
+        "REST APIs",
+        "Responsive UI",
+      ],
+      tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Mongoose", "Cloudinary"],
+      github: "https://github.com/chetanrpadole/StayNest",
+      live: "https://stay-nest-8cgx.vercel.app/",
+      featured: true,
+    },
+    {
+      title: "Employee Management System",
+      desc: "A full-stack MERN application for managing employee records, attendance tracking, and role-based access control with a secure REST API and dashboard for analytics.",
+      features: [
+        "Role-based Authentication",
         "Attendance Tracking",
         "Dashboard Analytics",
         "CRUD Operations",
@@ -14,20 +30,6 @@ function Projects() {
       tags: ["React", "Node.js", "MongoDB", "Express", "JWT"],
       github: "https://github.com/chetanrpadole/EMS",
       live: "https://ems-zeta-ten.vercel.app/",
-      featured: true,
-    },
-    {
-      title: "AI-Powered Career Counselling",
-      desc: "An intelligent career guidance platform that uses AI to provide personalized career recommendations and skill assessments for students and professionals.",
-      features: [
-        "AI Integration",
-        "Skill Assessments",
-        "Learning Paths",
-        "Responsive UI",
-      ],
-      tags: ["React", "JavaScript", "HTML", "CSS"],
-      github: "", // Left blank intentionally based on original data
-      live: "https://prajwalsondawalek.netlify.app/",
       featured: false,
     },
     {
@@ -44,24 +46,17 @@ function Projects() {
       featured: false,
     },
     {
-      title: "StyaNest",
-      desc: "A modern property listing and management platform designed to connect renters and buyers with curated residential and commercial listings. Includes search filters, image galleries, and contact integrations.",
+      title: "AI-Powered Career Counselling",
+      desc: "An intelligent career guidance platform that provides personalized career recommendations and skill assessments for students and professionals.",
       features: [
-        "Advanced Search",
-        "Image Galleries",
-        "Contact Integration",
-        "Responsive Design",
+        "AI Integration",
+        "Skill Assessments",
+        "Learning Paths",
+        "Responsive UI",
       ],
-      tags: [
-        "React",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Mangoos",
-        "cloudinary",
-      ],
+      tags: ["React", "JavaScript", "HTML", "CSS"],
       github: "",
-      live: "https://stay-nest-8cgx.vercel.app/",
+      live: "https://prajwalsondawalek.netlify.app/",
       featured: false,
     },
   ];

@@ -5,9 +5,11 @@ function Skills() {
         {
             title: "Frontend",
             skills: [
-                { name: "React", level: "Comfortable" },
-                { name: "JavaScript (ES6+)", level: "Comfortable" },
-                { name: "HTML & CSS", level: "Comfortable" },
+                { name: "HTML", level: "Comfortable" },
+                { name: "CSS", level: "Comfortable" },
+                { name: "JavaScript", level: "Comfortable" },
+                { name: "React.js", level: "Comfortable" },
+                { name: "Bootstrap", level: "Comfortable" },
                 { name: "Tailwind CSS", level: "Comfortable" },
             ],
         },
@@ -17,24 +19,22 @@ function Skills() {
                 { name: "Node.js", level: "Comfortable" },
                 { name: "Express.js", level: "Comfortable" },
                 { name: "REST APIs", level: "Comfortable" },
-                { name: "JWT Authentication", level: "Learning" },
+                { name: "Python", level: "Comfortable" },
             ],
         },
         {
             title: "Database",
             skills: [
                 { name: "MongoDB", level: "Comfortable" },
-                { name: "Mongoose", level: "Comfortable" },
-                { name: "Aggregation Pipeline", level: "Exploring" },
+                { name: "MySQL", level: "Comfortable" },
             ],
         },
         {
-            title: "Tools & Workflow",
+            title: "Tools",
             skills: [
-                { name: "Git & GitHub", level: "Comfortable" },
-                { name: "Postman", level: "Comfortable" },
+                { name: "Git", level: "Comfortable" },
+                { name: "GitHub", level: "Comfortable" },
                 { name: "VS Code", level: "Comfortable" },
-                { name: "Vite", level: "Comfortable" },
             ],
         },
     ];

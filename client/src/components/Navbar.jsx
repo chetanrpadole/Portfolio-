@@ -22,7 +22,7 @@ function Navbar() {
         }
     };
 
-    const links = ["about", "skills", "projects"];
+    const links = ["about", "skills", "experience", "projects"];
 
     return (
         <nav

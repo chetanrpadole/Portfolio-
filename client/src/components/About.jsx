@@ -12,11 +12,7 @@ function About() {
                     </h2>
                     <div className="space-y-4 text-text-secondary leading-relaxed">
                         <p>
-                            I’m a fresher MERN stack developer
-                            passionate about building full-stack web applications
-                            using MongoDB, Express.js, React, and Node.js.
-                            I enjoy creating practical projects, learning new technologies,
-                            and improving my problem-solving and development skills.
+                            I'm Chetan Padole, a Computer Technology graduate and Full Stack Developer focused on building web applications with the MERN stack. I enjoy developing responsive applications, working with REST APIs and databases, and continuously improving my problem-solving and software development skills.
                         </p>
                     </div>
                 </div>

@@ -16,12 +16,10 @@ function Hero() {
             Chetan Padole
           </h1>
           <h2 className="text-2xl md:text-3xl font-semibold text-text-muted mb-6">
-            MERN Stack Developer
+            Full Stack Developer | MERN Stack Developer
           </h2>
           <p className="text-text-secondary leading-relaxed mb-8 max-w-md">
-            I build full-stack web applications with React, Node.js, Express,
-            and MongoDB. Focused on writing clean code, building practical
-            features, and shipping things that actually work.
+            I build responsive and full-stack web applications using React, Node.js, Express, and MongoDB.
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -33,14 +31,6 @@ function Hero() {
               View Projects
             </a>
             <a
-              href="https://github.com/chetanrpadole"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-2.5 border border-border text-text-secondary text-sm rounded-md hover:border-accent hover:text-accent transition-colors"
-            >
-              GitHub
-            </a>
-            <a
               href="https://drive.google.com/file/d/1HOpHAyF_0Dt-m_zRwW6FjOKxrAtSOhKD/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
@@ -49,11 +39,20 @@ function Hero() {
               Download Resume
             </a>
             <a
-              href="#contact"
-              onClick={(e) => scrollTo(e, "contact")}
+              href="https://github.com/chetanrpadole"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-5 py-2.5 border border-border text-text-secondary text-sm rounded-md hover:border-accent hover:text-accent transition-colors"
             >
-              Contact Me
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/chetanrpadole/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 border border-border text-text-secondary text-sm rounded-md hover:border-accent hover:text-accent transition-colors"
+            >
+              LinkedIn
             </a>
           </div>
         </div>
